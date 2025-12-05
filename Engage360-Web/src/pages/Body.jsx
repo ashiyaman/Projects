@@ -5,11 +5,11 @@ import Sidebar from "../components/Sidebar"
 
 const Body = () => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-emerald-300">
             <Navbar />
             <div className="flex flex-col md:flex-row">
                 <Sidebar />
-                <Outlet />
+                <Outlet/>
             </div>
             
         </div>

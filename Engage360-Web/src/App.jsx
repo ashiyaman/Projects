@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Body from "./pages/Body"
-//import Leads from "./components/Leads"
 import Dashboard from "./pages/Dashboard"
 import Sales from "./pages/Sales"
 import Agents from "./pages/Agents"
