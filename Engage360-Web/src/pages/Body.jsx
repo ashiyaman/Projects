@@ -7,8 +7,11 @@ const Body = () => {
     return (
         <div className="flex flex-col">
             <Navbar />
-            <Sidebar />
-            <Outlet />
+            <div className="flex flex-col md:flex-row">
+                <Sidebar />
+                <Outlet />
+            </div>
+            
         </div>
     )
 }
