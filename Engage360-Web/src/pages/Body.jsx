@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar"
 
 const Body = () => {
     return (
-        <div className="flex flex-col bg-emerald-300">
+        <div className="flex flex-col">
             <Navbar />
             <div className="flex flex-col md:flex-row">
                 <Sidebar />
