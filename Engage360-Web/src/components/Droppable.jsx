@@ -6,7 +6,12 @@ const Droppable = ({id, tasks}) => {
         id
     })
     return (
-        <ul ref={setNodeRef} key={id} id={id} className="min-h-full border p-4 min-w-4/6 mx-3 rounded">
+        <ul ref={setNodeRef} key={id} id={id} 
+            className="min-h-full w-40 md:min-w-2/6 glass-card py-3 shrink-0"
+            style={{
+                border: isOver ? "2px solid #38bdf8" : "",
+                backgroundColor: isOver ? "rgba(255, 255, 255, 0.2)" : ""
+            }}>
             <h3>{id}</h3>
             {tasks.map((task) => (
             <Task key={task._id} id={task._id} name={task.name} />

@@ -27,19 +27,17 @@ const Dashboard = () => {
     console.log(active, over);
     if (!over) return;
 
-    const selectedLead = leadData.find((lead) => lead._id === active.id);
-    console.log(selectedLead);
+    setLeadData((prev) =>
+      prev.map((lead) =>
+        lead._id === active.id ? { ...lead, status: over.id } : lead
+      )
+    );
     try {
       const updateLeadStatus = await axios.put(
         `http://localhost:3000/leads/edit/${active.id}`,
         { status: over.id }
       );
-      console.log(updateLeadStatus);
-      setLeadData((prev) =>
-        prev.map((lead) =>
-          lead._id === active.id ? { ...lead, status: over.id } : lead
-        )
-      );
+      console.log(updateLeadStatus);      
     } catch (error) {
       console.error("Error updating lead status:", error);
     }
@@ -49,11 +47,10 @@ const Dashboard = () => {
     <DndContext
       collisionDetection={closestCorners}
       onDragEnd={handleDrag}
-      onDragStart={() => "Drag start"}
     >
-      <div className="flex flex-col">
-        <h1 className="py-4 text-center font-bold text-xl">Dashboard</h1>
-        <div className="flex overflow-x-auto min-h-full">
+      <div className="flex flex-col bg-(--background-app-gradient) py-4">
+        <h1 className="text-center font-bold text-xl py-4">Dashboard</h1>
+        <div className="flex overflow-x-auto min-h-full py-2 px-4 gap-4 scroll-smooth">
           {containers &&
             containers.map((container) => (
               <Droppable

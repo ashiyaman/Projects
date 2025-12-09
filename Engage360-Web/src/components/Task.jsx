@@ -8,11 +8,11 @@ const Task = ({id, name}) => {
       ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
       : undefined,
     touchAction: "none",
-    pointer: "cursor"
+    cursor: transform ? "grabbing" : "grab"
   };
 
     return (
-        <li key={id} ref={setNodeRef} {...listeners} {...attributes} style={style} className="bg-cyan-700 p-2 m-1 text-white rounded">{name}</li>
+        <li key={id} ref={setNodeRef} {...listeners} {...attributes} style={style} className="glass-task p-2 m-1 text-white rounded">{name}</li>
     )
 }
 

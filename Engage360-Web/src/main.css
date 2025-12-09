@@ -1,1 +1,60 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --background-app-gradient: linear-gradient(
+    135deg,
+    #0f0c29 0%,
+    #302b63 50%,
+    #24243e 100%
+  );
+
+  --color-glass-light: rgba(255, 255, 255, 0.2);
+  --color-glass-dark: rgba(48, 43, 99, 0.45);
+  --color-glass-border: rgba(255, 0, 255, 0.35);
+
+  --shadow-glass: 0 4px 40px rgba(200, 80, 255, 0.35);
+
+  --main-text: #ffffff
+}
+
+
+
+
+.glass-card {
+  @apply bg-[var(--color-glass-light)]
+         backdrop-blur-lg
+         border border-[var(--color-glass-border)]
+         shadow-[var(--shadow-glass)]
+         rounded-xl p-4;
+}
+
+.glass-task {
+  @apply bg-[var(--color-glass-dark)]
+         backdrop-blur-md
+         border border-[var(--color-glass-border)]
+         shadow-[var(--shadow-glass)]
+         rounded-lg p-3 text-white;
+}
+
+
+
+/* Text Color
+
+Main text: soft white #ffffff
+
+Accent: neon cyan #00f0ff or magenta #ff00ff
+
+Borders & Glow
+
+Columns: rgba(255,0,255,0.35) (neon magenta)
+
+Cards: rgba(200,80,255,0.35) (soft magenta glow)
+
+Sidebar: border-[#ff00ff]
+
+Hover Effects
+
+Slight background tint: hover:bg-white/10 or hover:bg-cyan-400/20
+
+Shadow glow: hover:shadow-[0_4px_30px_rgba(0,255,255,0.25)] */
+
