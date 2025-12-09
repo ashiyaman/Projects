@@ -51,16 +51,18 @@ const Dashboard = () => {
       onDragEnd={handleDrag}
       onDragStart={() => "Drag start"}
     >
-      <h1 className="py-4 text-center font-bold text-xl">Dashboard</h1>
-      <div>
-        {containers &&
-          containers.map((container) => (
-            <Droppable
-              key={container}
-              id={container}
-              tasks={leadData.filter((lead) => lead.status === container)}
-            ></Droppable>
-          ))}
+      <div className="flex flex-col">
+        <h1 className="py-4 text-center font-bold text-xl">Dashboard</h1>
+        <div className="flex overflow-x-auto min-h-full">
+          {containers &&
+            containers.map((container) => (
+              <Droppable
+                key={container}
+                id={container}
+                tasks={leadData.filter((lead) => lead.status === container)}
+              ></Droppable>
+            ))}
+        </div>
       </div>
     </DndContext>
   );

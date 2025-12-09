@@ -6,11 +6,11 @@ const Droppable = ({id, tasks}) => {
         id
     })
     return (
-        <ul ref={setNodeRef} key={id} id={id} className="min-h-full border p-4">
+        <ul ref={setNodeRef} key={id} id={id} className="min-h-full border p-4 min-w-4/6 mx-3 rounded">
             <h3>{id}</h3>
-        {tasks.map((task) => (
-          <Task key={task._id} id={task._id} name={task.name} />
-        ))}
+            {tasks.map((task) => (
+            <Task key={task._id} id={task._id} name={task.name} />
+            ))}
         </ul>
     )
 }

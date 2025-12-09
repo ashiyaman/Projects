@@ -12,7 +12,7 @@ const Task = ({id, name}) => {
   };
 
     return (
-        <li key={id} ref={setNodeRef} {...listeners} {...attributes} style={style} className="bg-cyan-700 p-2 m-2 text-white">{name}</li>
+        <li key={id} ref={setNodeRef} {...listeners} {...attributes} style={style} className="bg-cyan-700 p-2 m-1 text-white rounded">{name}</li>
     )
 }
 
