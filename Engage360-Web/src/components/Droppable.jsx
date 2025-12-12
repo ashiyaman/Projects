@@ -7,7 +7,7 @@ const Droppable = ({id, tasks}) => {
     })
     return (
         <ul ref={setNodeRef} key={id} id={id} 
-            className="min-h-full w-40 md:min-w-2/6 glass-card py-3 shrink-0"
+            className="min-h-full w-64 mx-4 md:min-w-2/6 glass-card py-3 shrink-0"
             style={{
                 border: isOver ? "2px solid #38bdf8" : "",
                 backgroundColor: isOver ? "rgba(255, 255, 255, 0.2)" : ""
